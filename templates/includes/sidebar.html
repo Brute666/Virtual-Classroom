@@ -1,0 +1,213 @@
+{%load static %}
+
+
+<div class="sidebar" id="sidebar">
+            <div class="sidebar-inner slimscroll">
+               <div id="sidebar-menu" class="sidebar-menu">
+                   {% if user.user_type == '1' %}
+                  <ul>
+                     <li class="menu-title">
+                        <span>Main Menu</span>
+                     </li>
+                     <li>
+                        <a href="{% url 'admins_home' %}"><i class="fas fa-holly-berry"></i> <span>Dashboard</span></a>
+                     </li>
+                     </li>
+                     <li class="submenu">
+                        <a href="#"><i class="fas fa-user-graduate"></i> <span> Students</span> <span class="menu-arrow"></span></a>
+                        <ul>
+
+                           <li><a href="{% url 'view_student' %}">View Student</a></li>
+                           <li><a href="{% url 'add_student' %}">Add Student</a></li>
+
+                        </ul>
+                     </li>
+                     <li class="submenu">
+                        <a href="#"><i class="fas fa-chalkboard-teacher"></i> <span> Teachers</span> <span class="menu-arrow"></span></a>
+                        <ul>
+
+                           <li><a href="{% url 'view_teacher' %}">View Teacher</a></li>
+                           <li><a href="{% url 'add_teacher' %}">Add Teacher</a></li>
+
+                        </ul>
+                     </li>
+                     <li class="submenu">
+                        <a href="#"><i class="fas fa-building"></i> <span> Course</span> <span class="menu-arrow"></span></a>
+                        <ul>
+                           <li><a href="{% url 'view_course' %}">View Course</a></li>
+                           <li><a href="{% url 'add_course' %}">Add Course</a></li>
+
+                           </ul>
+                     </li>
+                      <li class="submenu">
+                        <a href="#"><i class="fas fa-book-reader"></i> <span> Attendance</span> <span class="menu-arrow"></span></a>
+                        <ul>
+                           <li><a href="subjects.html">Student</a></li>
+                           <li><a href="add-subject.html">Teacher</a></li>
+                        </ul>
+                     </li>
+
+                     <li class="submenu">
+                         <a href="event.html"><i class="fas fa-calendar-day"></i> <span>Events</span></a><span class="menu-arrow"></span></a>
+                           <ul>
+                           <li><a href="subjects.html">Student</a></li>
+                           <li><a href="add-subject.html">Teacher</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <i class="" aria-hidden="true"></i>
+
+                        <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+                     </li>
+                  </ul>
+
+                   {% elif user.user_type == '2' %}
+                    <ul>
+                     <li class="menu-title">
+                        <span>Main Menu</span>
+                     </li>
+                     <li>
+                        <a href="{% url 'teacher_home' %}"><i class="fas fa-holly-berry"></i> <span>Dashboard</span></a>
+                     </li>
+                     </li>
+                     <li class="submenu">
+                        <a href="#"><i class="fas fa-user-graduate"></i> <span> Students</span> <span class="menu-arrow"></span></a>
+                        <ul>
+
+                           <li><a href="{% url 'view_student' %}">View Student</a></li>
+                           <li><a href="{% url 'add_student' %}">Add Student</a></li>
+
+                        </ul>
+                     </li>
+                     <li class="submenu">
+                        <a href="#"><i class="fas fa-chalkboard-teacher"></i> <span> Teachers</span> <span class="menu-arrow"></span></a>
+                        <ul>
+
+                           <li><a href="{% url 'view_teacher' %}">View Teacher</a></li>
+
+                        </ul>
+                     </li>
+                     <li class="submenu">
+                        <a href="#"><i class="fas fa-building"></i> <span> Course</span> <span class="menu-arrow"></span></a>
+                        <ul>
+                           <li><a href="{% url 'view_course' %}">View Course</a></li>
+                           <li><a href="{% url 'add_course' %}">Add Course</a></li>
+
+                           </ul>
+                        </li>
+
+
+                        <li class="submenu">
+                        <a href="#"><i class="fas fa-building"></i> <span>Exams</span> <span class="menu-arrow"></span></a>
+                        <ul>
+                           <li><a href="{% url 'view_course' %}">Theory Exams</a></li>
+                           <li><a href="{% url 'add_course' %}">Lab Exams</a></li>
+
+                           </ul>
+                        </li>
+
+                        <li class="submenu">
+                        <a href="#"><i class="fas fa-building"></i> <span>Assignment</span> <span class="menu-arrow"></span></a>
+                        <ul>
+                           <li><a href="{% url 'view_course' %}">Class Task</a></li>
+                           <li><a href="{% url 'add_course' %}">Home Task</a></li>
+
+                           </ul>
+                        </li>
+                        <li class="submenu">
+                        <a href="#"><i class="fas fa-chalkboard-teacher"></i> <span>Grades</span> <span class="menu-arrow"></span></a>
+                        <ul>
+
+                           <li><a href="{% url 'view_teacher' %}">Grades</a></li>
+
+                        </ul>
+                     </li>
+
+
+                        <i class="" aria-hidden="true"></i>
+
+                        <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+                     </li>
+                  </ul>
+
+
+
+                   {% else %}
+                    <ul>
+                     <li class="menu-title">
+                        <span>Main Menu</span>
+                     </li>
+                     <li>
+                        <a href="{% url 'student_home' %}"><i class="fas fa-holly-berry"></i> <span>Dashboard</span></a>
+                     </li>
+                     </li>
+
+                        <li class="submenu">
+                        <a href="#"><i class="fas fa-user-graduate"></i> <span> Students</span> <span class="menu-arrow"></span></a>
+                        <ul>
+
+                           <li><a href="{% url 'view_student' %}">View Student</a></li>
+
+                        </ul>
+                     </li>
+                     <li class="submenu">
+                        <a href="#"><i class="fas fa-chalkboard-teacher"></i> <span> Teachers</span> <span class="menu-arrow"></span></a>
+                        <ul>
+
+                           <li><a href="{% url 'view_teacher' %}">View Teacher</a></li>
+
+                        </ul>
+                     </li>
+                     <li class="submenu">
+                        <a href="#"><i class="fas fa-building"></i> <span> Course</span> <span class="menu-arrow"></span></a>
+                        <ul>
+                           <li><a href="{% url 'view_course' %}">Enroll Course</a></li>
+                            <a href="{% url 'my_course' %}">My Courses</a></li>
+
+
+
+                           </ul>
+                     </li>
+
+
+                        <li class="submenu">
+                        <a href="#"><i class="fas fa-building"></i> <span>Exams</span> <span class="menu-arrow"></span></a>
+                        <ul>
+                           <li><a href="{% url 'view_course' %}">Theory Exams</a></li>
+                           <li><a href="{% url 'add_course' %}">Lab Exams</a></li>
+
+                           </ul>
+                        </li>
+
+                        <li class="submenu">
+                        <a href="#"><i class="fas fa-building"></i> <span>Assignment</span> <span class="menu-arrow"></span></a>
+                        <ul>
+                           <li><a href="{% url 'view_course' %}">Class Task</a></li>
+                           <li><a href="{% url 'add_course' %}">Home Task</a></li>
+
+                           </ul>
+                        </li>
+
+                     <li class="submenu">
+                        <a href="#"><i class="fas fa-chalkboard-teacher"></i> <span>Progress</span> <span class="menu-arrow"></span></a>
+                        <ul>
+
+                           <li><a href="{% url 'view_teacher' %}">Progress</a></li>
+
+                        </ul>
+
+                     </li>
+                        <li>
+
+                        <i class="" aria-hidden="true"></i>
+
+                        <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+                     </li>
+                    </ul>
+
+
+                   {% endif %}
+
+               </div>
+            </div>
+         </div>
